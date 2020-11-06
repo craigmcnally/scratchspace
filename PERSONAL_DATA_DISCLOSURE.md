@@ -5,20 +5,20 @@ The purpose of this form is to disclose the types of personal data stored by eac
 It's important to note that personal data is not limited to that which can be used to identify a person on it's own (e.g. Social security number), but also data used in conjunction with other data can be used to identify a person (e.g. date of birth + city + gender).
 
 ## Personal Data Stored by This Module
-- [ ] First name    
-- [ ] Last name
+- [x] First name    
+- [x] Last name
 - [ ] Middle name
 - [ ] Gender
 - [ ] Date of birth
 - [ ] Place of birth
 - [ ] Racial or ethnic origin
-- [ ] Address
+- [x] Address
 - [ ] Location information
-- [ ] Phone numbers
+- [x] Phone numbers
 - [ ] Passport number / National identification numbers
 - [ ] Driver’s license number
 - [ ] Social security number
-- [ ] Email address
+- [x] Email address
 - [ ] Web cookies
 - [ ] IP address
 - [ ] Geolocation data
