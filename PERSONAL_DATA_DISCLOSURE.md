@@ -44,3 +44,6 @@ The following laws and policies were considered when creating the list of person
 * [Personal Data Protection Bill, 2019 (India)](https://www.prsindia.org/billtrack/personal-data-protection-bill-2019)
 * [Data protection act 2018 (UK)](https://www.legislation.gov.uk/ukpga/2018/12/section/3/enacted)
 
+---
+
+v1.0
