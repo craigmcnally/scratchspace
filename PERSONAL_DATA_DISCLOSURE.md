@@ -6,27 +6,30 @@ The purpose of this form is to disclose the types of personal data stored by eac
 It's important to note that personal data is not limited to that which can be used to identify a person on it's own (e.g. Social security number), but also data used in conjunction with other data to identify a person (e.g. date of birth + city + gender).
 
 ## Personal Data Stored by This Module
-- [x] First name    
-- [x] Last name
+- [ ] This module does not store any personal data.
+---
+- [ ] First name    
+- [ ] Last name
 - [ ] Middle name
 - [ ] Pseudonym / Alias / Nickname / Username
 - [ ] Gender
 - [ ] Date of birth
 - [ ] Place of birth
 - [ ] Racial or ethnic origin
-- [x] Address
+- [ ] Address
 - [ ] Location information
-- [x] Phone numbers
+- [ ] Phone numbers
 - [ ] Passport number / National identification numbers
 - [ ] Driver’s license number
 - [ ] Social security number
-- [x] Email address
+- [ ] Email address
 - [ ] Web cookies
 - [ ] IP address
 - [ ] Geolocation data
 - [ ] Financial information
 - [ ] Logic or algorithms used to build a user/profile
-- [ ] Other personal data - Please list as needed
+<!--- - [ ] Other personal data - Please list as needed -->
+<!--- - [ ] Other personal data - Please list as needed -->
 
 **NOTE** This is not intended to be a comprehensive list, but instead provide a starting point for module developers/maintainers to use.
 
@@ -40,3 +43,4 @@ The following laws and policies were considered when creating the list of person
   * http://en.east-concord.com/zygd/Article/20203/ArticleContent_1690.html?utm_source=Mondaq&utm_medium=syndication&utm_campaign=LinkedIn-integration
 * [Personal Data Protection Bill, 2019 (India)](https://www.prsindia.org/billtrack/personal-data-protection-bill-2019)
 * [Data protection act 2018 (UK)](https://www.legislation.gov.uk/ukpga/2018/12/section/3/enacted)
+
