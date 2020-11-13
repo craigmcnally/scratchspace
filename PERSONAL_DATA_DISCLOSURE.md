@@ -7,6 +7,7 @@ It's important to note that personal data is not limited to that which can be us
 
 ## Personal Data Stored by This Module
 - [ ] This module does not store any personal data.
+- [ ] This module provides custom fields.
 ---
 - [ ] First name    
 - [ ] Last name
