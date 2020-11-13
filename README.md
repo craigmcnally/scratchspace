@@ -2,7 +2,7 @@
 This repository exists to provide a personal data disclosure form template and related tools/scripts.  Each module will specialize and store this form in the top level of their git repository.  The purpose of this form is to disclose the types of personal data stored by each module.  This information enables those hosting FOLIO to better manage and comply with various privacy laws and restrictions, e.g. GDPR.
 
 ## How do I use this form?
-1. Place a copy of the PERSONAL_DATA_DISCLOSURE_FORM.md at the top level of your module's git repository, e.g. next to README.md, NEWS.md, etc.
+1. Place a copy of the `PERSONAL_DATA_DISCLOSURE_FORM.md` at the top level of your module's git repository, e.g. next to `README.md`, `NEWS.md`, etc.
 2. Fill out the form by adding an `x` in the `[ ]` for each of the fields your module stores, e.g. `[x] First Name` 
 
 ## Revision Control
