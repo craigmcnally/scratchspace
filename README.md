@@ -6,7 +6,7 @@ This repository exists to provide a personal data disclosure form template and r
 2. Fill out the form by adding an `x` in the `[ ]` for each of the fields your module stores, e.g. `[x] First Name` 
 
 ## Revision Control
-The disclosure form is versioned.  The version is indicated at the bottom of the form.  As adjustments are made to the template, this version should be updated accordingly.  These changes should be submitted in the form of pull requests (PRs) to be reviewed and approved by the code owners of this repository.  Major changes - indicating changes which are not backwards compatible, e.g. removing a field from the list) will result in a new "release" in git.
+The disclosure form is versioned.  The version is indicated at the bottom of the form.  As adjustments are made to the template, this version should be updated accordingly.  These changes should be submitted in the form of pull requests (PRs) to be reviewed and approved by the code owners of this repository.  Major changes - indicating changes which are not backwards compatible, e.g. removing a field from the list) will result in a new "release" in git.  Code owners are responsible for reviewing/accepting these PRs and making "releases".
 
 ## Aggregation
 Since the specialized/"filled-in" forms will be distributed among each of the module repositories, their individual value is somewhat limited.  An aggregate picture of all or a collection of the modules is much more useful to a hosting provider.  Tooling/scripts provided by this repository helps with this aggregation.
