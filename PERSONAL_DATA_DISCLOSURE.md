@@ -7,7 +7,8 @@ It's important to note that personal data is not limited to that which can be us
 
 ## Personal Data Stored by This Module
 - [ ] This module does not store any personal data.
-- [ ] This module provides custom fields.
+- [ ] This module provides [custom fields](https://github.com/folio-org/folio-custom-fields).
+- [ ] This module stores fields with free-form text (tags, notes, descriptions, etc.)
 ---
 - [ ] First name    
 - [ ] Last name
