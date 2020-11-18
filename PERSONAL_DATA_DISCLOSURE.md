@@ -5,6 +5,12 @@ The purpose of this form is to disclose the types of personal data stored by eac
 
 It's important to note that personal data is not limited to that which can be used to identify a person on it's own (e.g. Social security number), but also data used in conjunction with other data to identify a person (e.g. date of birth + city + gender).
 
+For the purposes of this form, "store" includes the following:
+* Persisting to storage - Either internal (e.g. Postgres) or external (e.g. S3, etc.) to FOLIO
+* Caching - In-memory, etc.
+* Logging
+* Sending to an external piece of infrastructure such as a queue (e.g. Kafka), search engine (e.g. Elasticsearch), distributed table, etc.
+
 ## Personal Data Stored by This Module
 - [ ] This module does not store any personal data.
 - [ ] This module provides [custom fields](https://github.com/folio-org/folio-custom-fields).
