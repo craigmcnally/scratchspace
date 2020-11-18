@@ -5,7 +5,7 @@ The purpose of this repository is to provide a personal data disclosure form tem
 1. Place a copy of the [PERSONAL_DATA_DISCLOSURE.md](PERSONAL_DATA_DISCLOSURE.md) at the top level of your module's git repository, e.g. next to `README.md`, `NEWS.md`, etc.
 2. Fill out the form by adding an `x` in the `[ ]` for each of the fields your module stores, e.g. `[x] First Name` 
 
-**N.B.** All modules should include a copy of this form in their git repository, even if they don't store any data.  There's a checkbox at the top indicating that this module doesn't story any personal data.  This removes ambiguities around whether the module doesn't store personal data, or if the module developers simply haven't filled it out yet, etc.
+**N.B.** _All_ modules (including UI) should include a copy of this form in their git repository, even if they don't store any data.  There's a checkbox at the top indicating that this module doesn't story any personal data.  This removes ambiguities around whether the module doesn't store personal data, or if the module developers simply haven't filled it out yet, etc.
 
 ## Revision Control
 The disclosure form is versioned, with the version indicated at the bottom of the form.  As adjustments are made to the template, this version should be updated accordingly.  These changes should be submitted as pull requests (PRs) to be reviewed and approved by the code owners of this repository.  Major changes - indicating changes which are not backwards compatible, e.g. removing a field from the list) will result in a new "release" in git.
