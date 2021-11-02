@@ -62,12 +62,12 @@ Information gathered includes:
     * See JIRA workflow for details.
 
 ## Feedback &  Acceptance/Rejection
- 1. Evaluation results are published to Technical Council’s GitHub repo and linked to the JIRA ticket in Markdown format
+1. Evaluation results are published to Technical Council’s GitHub repo and linked to the JIRA ticket in Markdown format
     * An "Evaluation Results Template" (defined and published by the Technical Council) will be used for this.
- 1. Interested parties (e.g. release coordinator, contributor points of contact, Product Council members, etc.) are notified, and provided a link to the results.
+1. Interested parties (e.g. release coordinator, contributor points of contact, Product Council members, etc.) are notified, and provided a link to the results.
     * See JIRA workflow for details.
     * If failed, the contributors may ask for help understanding the failed criteria.
       * The comments section of the JIRA may be used for this purpose.  
       * If a meeting is required or desired, it's the responsibility of the contributor(s) to find a time that works and set the meeting up with the review team.  The regular Technical Council meeting ***will not*** be used for this purpose.
- 1. (If applicable) the contributor(s) resolve all issues and request a re-review.  
+1. (If applicable) the contributor(s) resolve all issues and request a re-review.  
     * See JIRA workflow for details.
