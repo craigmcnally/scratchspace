@@ -18,29 +18,27 @@ When performing a technical evaluation of a module, create a copy of this docume
 
 ## Shared/Common
 * [x] ~Uses Apache 2.0 license~
-* [ ] Module build MUST produce a valid module descriptor
-  * CAM -- interface versions are `A.B`, not `A.B.C`
+* [x] Module build MUST produce a valid module descriptor
 * [x] Module descriptor MUST include interface requirements for all consumed APIs
 * [x] ~Third party dependencies use an Apache 2.0 compatible license~
 * [x] In order to ensure reproducible builds, snapshot versions of build-time dependencies should not be referenced.
 * [x] Installation documentation is included
   * -_note: read more at https://github.com/folio-org/mod-search/blob/master/README.md_
-* [ ] Personal data form is completed, accurate, and provided as `PERSONAL_DATA_DISCLOSURE.md` file
+* [x] Personal data form is completed, accurate, and provided as `PERSONAL_DATA_DISCLOSURE.md` file
 * [ ] Sensitive and environment-specific information is not checked into git repository
-  * CAM -- See https://github.com/EBSCO-GSS/folio-sudoc/blob/23f77851f724d8c780353fce06cf9bc090138035/mod-sudoc/src/importConfig.json#L25
+  * CAM -- I still see sensitive and/or env-specific info checked in... See src/helpers_scripts/sudocCronEmailFunctions.js, src/helpers_scripts/sudocSMTPParameters.js
 * [x] Module is written in a language and framework from the [officially supported technologies](https://wiki.folio.org/display/TC/Officially+Supported+Technologies) page[^1]
   * CAM -- not officially supported, but mod-graphql is also written in node.js, so there is some precedent for this.
 * [ ] Module only uses FOLIO interfaces already provided by previously accepted modules _e.g. a UI module cannot be accepted that relies on an interface only provided by a back end module that hasn't been accepted yet_
-  * CAM -- the module descriptor indicates no interface dependencies, which is clearly inaccurate.  See https://github.com/EBSCO-GSS/folio-sudoc/blob/23f77851f724d8c780353fce06cf9bc090138035/mod-sudoc/descriptors/ModuleDescriptor.json#L505
-* [ ] Module gracefully handles the absence of third party systems or related configuration
-  * CAM -- need to look into this one.
+  * CAM -- the module descriptor is still appears to be missing many required interfaces, e.g. instances, instance-types, modes-of-issuance, etc.  
+* [x] Module gracefully handles the absence of third party systems or related configuration
 * [ ] Sonarqube hasn't identified any security issues, major code smells or excessive (>3%) duplication (6); and any disabled or intentionally ignored rules/recommendations are reasonably justified.
   * See [Rule Customization](https://dev.folio.org/guides/code-analysis/#rule-customization) details. 
-  * CAM -- unable to find sonarqube results, but npm audit finds 26 vulnerabilities... 8 moderate and 18 high
+  * CAM -- sonarqube results show 45 bugs, 100 vulnerabilities, 62 security hotspots, 0% code coverage, and 38.6% duplication.  However, I do see that tests were added.  This should be raised with FSE to determine why the tests aren't being run, or if they are, why they're not being sent to Sonarqube.
 * [x] Uses [officially supported](https://wiki.folio.org/display/TC/Officially+Supported+Technologies) build tools[^1]
   * CAM -- see comment above about node.js
 * [ ] Unit tests have 80% coverage or greater, and are based on [officially supported technologies](https://wiki.folio.org/display/TC/Officially+Supported+Technologies)[^1]
-  * CAM -- no tests exist as far as I can tell.
+  * CAM -- I see tests have been added but it's unclear what ther coverage % is.  See above item wrt sonarqube.
 
 ## Frontend
 * [x] ~If provided, End-to-end tests must be written in an [officially supported technology](https://wiki.folio.org/display/TC/Officially+Supported+Technologies)[^1]~
@@ -58,25 +56,22 @@ When performing a technical evaluation of a module, create a copy of this docume
 * [x] Module's repository includes a compliant Module Descriptor
   * -_note: read more at https://github.com/folio-org/okapi/blob/master/okapi-core/src/main/raml/ModuleDescriptor.json_
 * [ ] Module includes executable implementations of all endpoints in the provides section of the Module Descriptor
-  * CAM -- AFAICT only a few of the many endpoints in the module descriptor have been implemented.
+  * CAM -- I see implementations of all endpoints, but some of them are clearly stub impls.  This is bending the rules, but given the circumstances I'd be OK with returning a 501 (not implemented) in these cases.
 * [x] Environment vars are documented in the ModuleDescriptor
   * -_note: read more at [https://wiki.folio.org/pages/viewpage.action?pageId=65110683](https://wiki.folio.org/pages/viewpage.action?pageId=65110683)_
 * [x] If a module provides interfaces intended to be consumed by other FOLIO Modules, they must be defined in the Module Descriptor "provides" section, and must conform to FOLIO [interface naming conventions](https://dev.folio.org/guidelines/naming-conventions/#interfaces).
 * [ ] All API endpoints are documented in OpenAPI.
-  * CAM -- I don't see any open API specs
-* [ ] All API endpoints protected with appropriate permissions as per the following guidelines and recommendations, e.g. avoid using `*.all` permissions, all necessary module permissions are assigned, etc.
+  * CAM -- I see some OpenAPI specs added to one or two endpoints, but it's needed for all endpoints.  Also note that given the way this is implemented (as comment blocks/annotations in the code), it isn't clear if this is usable for generation of API documentation.  Typically the OpenAPI spec provided by modules is A) complete/comprehensive, and B) independent from the code, e.g. in a separate file.
+* [x] All API endpoints protected with appropriate permissions as per the following guidelines and recommendations, e.g. avoid using `*.all` permissions, all necessary module permissions are assigned, etc.
   * -_note: read more at https://dev.folio.org/guidelines/naming-conventions/ and https://wiki.folio.org/display/DD/Permission+Set+Guidelines_
-  * CAM -- None of the API endpoints are protected by permissions
-* [ ] Module provides reference data (if applicable), e.g. if there is a controlled vocabulary where the module requires at least one value
-  * CAM -- unsure if this is applicable or not.
+* [x] ~Module provides reference data (if applicable), e.g. if there is a controlled vocabulary where the module requires at least one value~
 * [x] ~If provided, integration (API) tests must be written in an [officially supported technology](https://wiki.folio.org/display/TC/Officially+Supported+Technologies)[^1]~
   * -_note: while it's strongly recommended that modules implement integration tests, it's not a requirement_
   * -_note: these tests are defined in https://github.com/folio-org/folio-integration-tests_
 * [x] Data is segregated by tenant at the storage layer
 * [x] The module doesn't access data in DB schemas other than its own and public
 * [x] Any dependencies, other than on defined interfaces, are declared in the README.md.
-* [ ] The module responds with a tenant's content based on x-okapi-tenant header
-  * CAM -- looks like the module uses a tenant request parameter instead of X-okapi-tenant request header in most places, except the _tenant API.
+* [x] The module responds with a tenant's content based on x-okapi-tenant header
 * [x] Standard GET `/admin/health` endpoint returning a 200 response
   * -_note: read more at https://wiki.folio.org/display/DD/Back+End+Module+Health+Check+Protocol_
 * [ ] High Availability (HA) compliant
@@ -84,7 +79,7 @@ When performing a technical evaluation of a module, create a copy of this docume
     * Connection affinity / sticky sessions / etc. are used
     * Local container storage is used
     * Services are stateful
-  * CAM -- Unsure.  Local file storage might be in use here.
+  * CAM -- It looks like you may be serving static files from the container filesystem, which breaks horizontal scalability. See https://github.com/EBSCO-GSS/folio-sudoc/blob/4e0b474f5220a077491e4ed82a602d7a51d8aa84/mod-sudoc/src/Sudoc_module_main_API.js#L63
 * [x] Module only uses infrastructure / platform technologies on the [officially supported technologies](https://wiki.folio.org/display/TC/Officially+Supported+Technologies) list.[^1]
   * _e.g. PostgreSQL, ElasticSearch, etc._
 
