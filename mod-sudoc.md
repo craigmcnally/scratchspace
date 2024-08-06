@@ -26,15 +26,15 @@ When performing a technical evaluation of a module, create a copy of this docume
   * -_note: read more at https://github.com/folio-org/mod-search/blob/master/README.md_
 * [x] Personal data form is completed, accurate, and provided as `PERSONAL_DATA_DISCLOSURE.md` file
 * [ ] Sensitive and environment-specific information is not checked into git repository
-  * CAM -- I still see sensitive and/or env-specific info checked in... See src/helpers_scripts/sudocCronEmailFunctions.js, src/helpers_scripts/sudocSMTPParameters.js
+  * CAM -- I still see sensitive and/or env-specific info checked in... See src/helpers_scripts/sudocCronEmailFunctions.js line 204 (in a comment, but it's still there)
 * [x] Module is written in a language and framework from the [officially supported technologies](https://wiki.folio.org/display/TC/Officially+Supported+Technologies) page[^1]
   * CAM -- not officially supported, but mod-graphql is also written in node.js, so there is some precedent for this.
 * [ ] Module only uses FOLIO interfaces already provided by previously accepted modules _e.g. a UI module cannot be accepted that relies on an interface only provided by a back end module that hasn't been accepted yet_
-  * CAM -- the module descriptor is still appears to be missing many required interfaces, e.g. instances, instance-types, modes-of-issuance, etc.  
+  * CAM -- the module descriptor is still appears to be missing many required interfaces, e.g. inventory-storage.alternative-title-types, inventory-storage.classification-types, inventory-storage.contributor-types, inventory-storage.electronic-access-relationships, inventory-storage.instance-formats, inventory-storage.instance-note-types, inventory-storage.modes-of-issuance, inventory-storage.nature-of-content-terms, etc.  
 * [x] Module gracefully handles the absence of third party systems or related configuration
 * [ ] Sonarqube hasn't identified any security issues, major code smells or excessive (>3%) duplication (6); and any disabled or intentionally ignored rules/recommendations are reasonably justified.
   * See [Rule Customization](https://dev.folio.org/guides/code-analysis/#rule-customization) details. 
-  * CAM -- sonarqube results show 45 bugs, 100 vulnerabilities, 62 security hotspots, 0% code coverage, and 38.6% duplication.  However, I do see that tests were added.  This should be raised with FSE to determine why the tests aren't being run, or if they are, why they're not being sent to Sonarqube.
+  * CAM -- sonarqube results show a large number of bugs, code smells, vulnerabilities and security hot spots.  There's also ~31% duplication.  However, I do see that tests were added.  This should be raised with FSE to determine why the tests aren't being run, or if they are, why they're not being sent to Sonarqube.
 * [x] Uses [officially supported](https://wiki.folio.org/display/TC/Officially+Supported+Technologies) build tools[^1]
   * CAM -- see comment above about node.js
 * [ ] Unit tests have 80% coverage or greater, and are based on [officially supported technologies](https://wiki.folio.org/display/TC/Officially+Supported+Technologies)[^1]
@@ -55,13 +55,13 @@ When performing a technical evaluation of a module, create a copy of this docume
 ## Backend
 * [x] Module's repository includes a compliant Module Descriptor
   * -_note: read more at https://github.com/folio-org/okapi/blob/master/okapi-core/src/main/raml/ModuleDescriptor.json_
-* [ ] Module includes executable implementations of all endpoints in the provides section of the Module Descriptor
-  * CAM -- I see implementations of all endpoints, but some of them are clearly stub impls.  This is bending the rules, but given the circumstances I'd be OK with returning a 501 (not implemented) in these cases.
+* [x] Module includes executable implementations of all endpoints in the provides section of the Module Descriptor
 * [x] Environment vars are documented in the ModuleDescriptor
   * -_note: read more at [https://wiki.folio.org/pages/viewpage.action?pageId=65110683](https://wiki.folio.org/pages/viewpage.action?pageId=65110683)_
 * [x] If a module provides interfaces intended to be consumed by other FOLIO Modules, they must be defined in the Module Descriptor "provides" section, and must conform to FOLIO [interface naming conventions](https://dev.folio.org/guidelines/naming-conventions/#interfaces).
 * [ ] All API endpoints are documented in OpenAPI.
   * CAM -- I see some OpenAPI specs added to one or two endpoints, but it's needed for all endpoints.  Also note that given the way this is implemented (as comment blocks/annotations in the code), it isn't clear if this is usable for generation of API documentation.  Typically the OpenAPI spec provided by modules is A) complete/comprehensive, and B) independent from the code, e.g. in a separate file.
+  * CAM --- *RESUME EVALUATION FROM HERE* ---
 * [x] All API endpoints protected with appropriate permissions as per the following guidelines and recommendations, e.g. avoid using `*.all` permissions, all necessary module permissions are assigned, etc.
   * -_note: read more at https://dev.folio.org/guidelines/naming-conventions/ and https://wiki.folio.org/display/DD/Permission+Set+Guidelines_
 * [x] ~Module provides reference data (if applicable), e.g. if there is a controlled vocabulary where the module requires at least one value~
